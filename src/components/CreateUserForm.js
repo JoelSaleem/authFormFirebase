@@ -43,10 +43,6 @@ class CreateUserForm extends Component {
     };
   }
 
-  componentWillMount() {
-    this.props.initialisePage();
-  }
-
   render() {
     const { email, password } = this.props.newUser;
     return(
