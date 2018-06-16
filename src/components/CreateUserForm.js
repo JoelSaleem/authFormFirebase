@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { emailChanged, passwordChanged, createUser, creationError } from '../actions/newUserActions';
+import { emailChanged,
+         passwordChanged,
+         createUser,
+         creationError,
+         initialisePage
+        } from '../actions/newUserActions';
 import { Field, Button, Spinner } from './common';
 
 class CreateUserForm extends Component {
@@ -36,6 +41,10 @@ class CreateUserForm extends Component {
         <Spinner />
       );
     };
+  }
+
+  componentWillMount() {
+    this.props.initialisePage();
   }
 
   render() {
@@ -84,4 +93,6 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, { emailChanged,
                                           passwordChanged,
-                                          createUser })(CreateUserForm);
+                                          createUser,
+                                          initialisePage
+                                        })(CreateUserForm);

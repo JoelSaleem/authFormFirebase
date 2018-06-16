@@ -3,3 +3,4 @@ export const PASSWORD_INPUT_CHANGE = '0002';
 export const LOGIN_USER = '0003';
 export const LOGIN_USER_SUCCESS = '0004';
 export const AUTH_ERROR = '0005';
+export const INITIALISE_PAGE = '0006';

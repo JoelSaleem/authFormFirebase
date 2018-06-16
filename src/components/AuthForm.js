@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { emailInputChange, passwordInputChange, loginUser } from '../actions/authActions';
+import { emailInputChange,
+         passwordInputChange,
+         loginUser,
+         initialisePage
+       } from '../actions/authActions';
 import { connect } from 'react-redux';
 import { Field, Button, Spinner } from './common';
 
@@ -39,6 +43,10 @@ class AuthForm extends Component {
     }
   }
 
+  componentWillMount() {
+    this.props.initialisePage();
+  }
+
   render() {
     return(
       <View style={{ paddingTop: 12, backgroundColor: 'white' }}>
@@ -74,5 +82,6 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {
   emailInputChange,
   passwordInputChange,
-  loginUser
+  loginUser,
+  initialisePage
 })(AuthForm);

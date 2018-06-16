@@ -5,8 +5,15 @@ import {
   PASSWORD_INPUT_CHANGE,
   LOGIN_USER,
   LOGIN_USER_SUCCESS,
-  AUTH_ERROR
- } from '../constants'
+  AUTH_ERROR,
+  INITIALISE_PAGE
+} from '../constants';
+
+export const initialisePage = () => {
+  return({
+    type: INITIALISE_PAGE
+  });
+};
 
 export const emailInputChange = text => {
   return ({

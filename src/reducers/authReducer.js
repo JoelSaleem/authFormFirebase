@@ -3,7 +3,8 @@ import {
   PASSWORD_INPUT_CHANGE,
   LOGIN_USER,
   LOGIN_USER_SUCCESS,
-  AUTH_ERROR
+  AUTH_ERROR,
+  INITIALISE_PAGE
 } from '../constants';
 
 const INITIAL_STATE = {
@@ -16,6 +17,8 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case INITIALISE_PAGE:
+      return INITIAL_STATE;
     case EMAIL_INPUT_CHANGE:
       return { ...state, email: action.payload, loading: false };
     case PASSWORD_INPUT_CHANGE:

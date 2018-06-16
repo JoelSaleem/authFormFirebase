@@ -8,6 +8,8 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case 'initialise_page':
+      return {...state, INITIAL_STATE };
     case 'email_changed':
       return { ...state, email: action.payload };
     case 'password_changed':

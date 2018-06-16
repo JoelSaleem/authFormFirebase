@@ -1,6 +1,10 @@
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 
+export const initialisePage = () => {
+  return({ type: 'initialise_page' });
+}
+
 export const emailChanged = text => {
   return({
     type: 'email_changed',
